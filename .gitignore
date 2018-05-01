@@ -1,0 +1,9 @@
+*.tex
+*.pdf
+*.jpg
+*.pptx
+*.png
+*.tar.gz
+*.synctex.gz
+*.aux
+*.log
