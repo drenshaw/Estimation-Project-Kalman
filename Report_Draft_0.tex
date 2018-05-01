@@ -1,0 +1,42 @@
+\documentclass[12pt,letterpaper,openany,fleqn]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Devin Renshaw}
+\title{Linear/Nonlinear Kalman Filter Implementation on Embedded System}
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		The Kalman filter has two main variations: the linear and extended (or nonlinear) filters. The linear Kalman filter is the basic form of this estimation technique; this will therefore be the basis of the project, and will be the initial implementation on the STM32F0. Conversely, the extended Kalman filter attempts to use the features of the Kalman filter with nonlinear systems, as the original Kalman filter applies only to linear systems.
+		
+		Many spacecraft rely on such systems, but with these systems shrinking in size and power consumption, extended use of these techniques may not be feasible. This is an attempt to characterize accuracy and power consumption for future space applications and whether or not other filters for estimation are required.
+		
+		This implementation will include both filters on an embedded board processing the sensor data acquired from the IMU (gyroscope and accelerometer) as well as GPS data (if available). While GPS data is ground-based only, this filtering technique could be applied to other localization techniques, such as planetary limb localization and landmark/feature navigation. In both of these scenarios, velocity and orientation (as well as rotation and acceleration) are vital measurements that contain noise that could jeopardize costly missions.
+		
+		The ultimate goal is to use the filters in spacecraft simulations; power consumption and accuracy are two competing requirements within the world of spacecraft localization, and this comparison of the techniques will further the work in this area.
+		
+	\end{abstract}
+
+	\chapter{Milestones, Timeline, and Group}
+	I plan to work on this project alone, and this is an area that to some others seemed uninterested. I plan to implement the following milestones with accompanying timeframes:
+	\begin{itemize}
+		\item STM32F0 board communication and specs (1 week)
+		\item Linear Kalman filter implementation on board (2 weeks)
+		\item Power and space requirements for linear Kalman filter (with above)
+		\item Extended Kalman filter implementation on board (2 weeks)
+		\item Power and space requirements for extended Kalman filter (with above)
+		\item Power and space requirement comparison (1 week)
+		\item Add GPS implementation for both filters (1 week)
+	\end{itemize}
+	\chapter{References}
+	A list of references is included below. Some references will be added later as they are used in the implementation.
+	\begin{itemize}
+		\item Accurate Planetary Limb Localization for Image-Based
+		Spacecraft Navigation by John Christian
+		\item Constructing a 3D scale-space from implicit surfaces for vision-based spacecraft relative navigation by Rhodes and Christian
+		\item Relative Navigation Using Only Intersatellite Range Measurements by John Christian
+	\end{itemize}
+	
+\end{document}
